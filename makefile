@@ -1,9 +1,9 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=TreeHashTableDemo.cpp Node.h LinkedList.h BTNode.h BSTree.h HTable.h
+SOURCES=TreeHashTableDemo.cpp BTNode.h BSTree.h 
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=assignment3
+EXECUTABLE=test
 
 all: $(SOURCES) $(EXECUTABLE)
 	
