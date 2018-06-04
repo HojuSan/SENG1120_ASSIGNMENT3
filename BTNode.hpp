@@ -71,13 +71,13 @@ bool BTNode<value_type>::check_right_child() const
 }
 
 template<typename value_type>
-bool check_one_child() const
+bool BTNode<value_type>::check_one_child() const
 {
     return	(((LChild == NULL) && (RChild != NULL)) || ((LChild != NULL) && (RChild == NULL)));		
 }
 
 template<typename value_type>
-value_type& get_data()
+value_type& BTNode<value_type>::get_data()
 {
     return data;
 }
@@ -95,7 +95,7 @@ BTNode<value_type>* BTNode<value_type>::get_left_child_data()
 }
 
 template<typename value_type>
-const BTNode<value_type>* BTNode<value_type>::get_left_child() const
+const BTNode<value_type>* BTNode<value_type>::get_left_child_data() const
 {
     return LChild;
 }

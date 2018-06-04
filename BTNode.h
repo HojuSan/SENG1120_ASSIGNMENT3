@@ -26,7 +26,7 @@ class BTNode
     value_type& get_data() const;
     const value_type& get_data() const;
     BTNode<value_type>* get_left_child_data();
-    const BTNode<value_type>* get_left_child() const;
+    const BTNode<value_type>* get_left_child_data() const;
     BTNode<value_type>* get_right_child_data();
     const  BTNode<value_type>* get_right_child_data() const;
     BTNode<value_type>* get_parent_data();

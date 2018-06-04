@@ -21,7 +21,7 @@
     }
 
     template<typename value_type>
-    void BSTree<value_type>::add(value_type new_input)
+    void BSTree<value_type>::add(value_type data)
     {
         if(rootPtr == NULL)
         {
@@ -34,7 +34,7 @@
     }
 
     template<typename value_type>
-    void BSTree<value_type>::remove(value_type& remove_input)
+    void BSTree<value_type>::remove(value_type& data)
     {
         if(size == 0)
         {
@@ -104,7 +104,7 @@
     }
 
     template<typename value_type>
-    bool BSTree<value_type>::erase(BTNode<value>* node, value_type& data)
+    bool BSTree<value_type>::erase(BTNode<value_type>* node, value_type& data)
     {
         
     if (node == NULL)														//If the node passed in is NULL
@@ -212,7 +212,7 @@
     }
 
     template<typename value_type>        
-    ostream& operator << (ostream& out, BSTree& list)
+    ostream& operator << (ostream& out, BSTree<value_type>& list)
     {
         out << "(" << list.print() << ")";
         return out;
