@@ -17,8 +17,11 @@ class BSTree
     BSTree(value_type data);
     ~BSTree();
     void add(value_type new_input);
-    void remove(value_type& remove_input);
+    //when you pass a literally value like an integer or a string instead of a stated variable like val1
+    //you need to put a const in it
+    void remove(const value_type& remove_input);
     void print();
+    BTNode<value_type>* findMin(BTNode<value_type>* node);
 
     private:
     BTNode<value_type>* rootPtr;
@@ -26,7 +29,7 @@ class BSTree
 
     void insert(BTNode<value_type>* node, value_type data);
     int compareNodes(const value_type node1, const value_type node2);
-    bool erase(BTNode<value_type>* node, value_type& data);
+    void erase(BTNode<value_type>* node, const value_type& data);
     void privatePrint(BTNode<value_type>* node);
 
 
