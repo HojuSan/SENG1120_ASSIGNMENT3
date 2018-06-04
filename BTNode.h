@@ -23,7 +23,7 @@ class BTNode
     bool check_left_child() const;
     bool check_right_child() const;
     bool check_one_child() const;
-    value_type& get_data() const;
+    value_type& get_data();
     const value_type& get_data() const;
     BTNode<value_type>* get_left_child_data();
     const BTNode<value_type>* get_left_child_data() const;

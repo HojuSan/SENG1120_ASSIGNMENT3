@@ -36,14 +36,17 @@
     template<typename value_type>
     void BSTree<value_type>::remove(value_type& data)
     {
+/*
         if(size == 0)
         {
             return false;
         }
-        elses
+        else
         {
-            return erase(rootPtr,data);
+            erase(rootPtr,data);
         }
+*/
+        erase(rootPtr,data);
     }
 
 //currently working on this one
@@ -196,7 +199,7 @@
     template<typename value_type>
     void BSTree<value_type>::print()
     {
-        return privatePrint(rootPtr);
+        privatePrint(rootPtr);
     }
 
     template<typename value_type>
@@ -214,6 +217,8 @@
     template<typename value_type>        
     ostream& operator << (ostream& out, BSTree<value_type>& list)
     {
-        out << "(" << list.print() << ")";
+        out << "(";
+        list.print();
+        out << ")";
         return out;
     }

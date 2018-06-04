@@ -4,7 +4,7 @@
 template<typename value_type>
 BTNode<value_type>::BTNode()
 {
-    data = 0;
+    data ??
     LChild = NULL;
     RChild = NULL;
     parent = NULL;
@@ -12,7 +12,7 @@ BTNode<value_type>::BTNode()
 */
 
 template<typename value_type>
-BTNode<value_type>::BTNode(const value_type& intdata = value_type(), BTNode<value_type>* intLchild = NULL, BTNode<value_type>* intRchild = NULL, BTNode<value_type>* intParent = NULL)
+BTNode<value_type>::BTNode(const value_type& intdata, BTNode<value_type>* intLchild, BTNode<value_type>* intRchild, BTNode<value_type>* intParent)
 {
     data = intdata;
     LChild = intLchild;

@@ -24,22 +24,22 @@ int main()
 
 	t = clock(); // gets current time
 	
-//	for (int i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++)
-//	{
+	for (int i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++)
+	{
 		// populates the tree.
-//		treeValues.add(vectorMarks[i]);
-//	}
-//   cout << "Initial tree: " << treeValues << endl; // prints the contents of the tree.
-/*
+		treeValues.add(vectorMarks[i]);
+	}
+   cout << "Initial tree: " << treeValues << endl; // prints the contents of the tree.
+
 	// modifies the tree.
-	treeValues.remove(123454);
-    treeValues.remove(787626);
-	treeValues.remove(678760);
-	treeValues.remove(22670);
-	treeValues.remove(56534);
-	treeValues.remove(1456769);
-	treeValues.remove(5465443);
-*/	
+//	treeValues.remove(123454);
+//  treeValues.remove(787626);
+//	treeValues.remove(678760);
+//	treeValues.remove(22670);
+//	treeValues.remove(56534);
+//	treeValues.remove(1456769);
+//	treeValues.remove(5465443);
+	
 	// uncomment this if you want to see a difference in execution time
 	// for (int i=0; i<1000; i++)
 	// {
@@ -47,7 +47,7 @@ int main()
 	//	   treeValues.remove(123454); treeValues.remove(787626); treeValues.remove(678760); treeValues.remove(22670); treeValues.remove(56534); treeValues.remove(1456769); treeValues.remove(5465443);
 	// }
 	
- //   cout << "Final tree: " << treeValues << endl; // prints the contents of the tree.
+    cout << "Final tree: " << treeValues << endl; // prints the contents of the tree.
 	cout << "Time elapsed: " << (clock() - t) << endl << endl; // prints elapsed time.
 
 //*************************************************************************************************************************
