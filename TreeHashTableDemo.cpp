@@ -17,7 +17,8 @@ int main()
 	clock_t t;
 
 //	BSTree<int> treeValues;
-	HTable<int> tableValues;
+//	HTable<int> tableValues;
+	HTable tableValues;
 
 /*
 	int vectorMarks[] = {123454, 23418, 787626, 56534, 879840, 5465443, 5650, 678760, 3456462, 34465, 97567, 345169, 1456769, 867570, 565471};

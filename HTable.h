@@ -7,7 +7,6 @@
 
 using namespace std;
 
-template<typename value_type>
 
 class HTable
 {
@@ -30,8 +29,6 @@ class HTable
     item* hashTable [tableSize];
 };
 
-template <typename value_type>
-ostream& operator << (ostream& out, HTable<value_type>& list);
+ostream& operator << (ostream& out, HTable& list);
 
-#include "HTable.hpp"
 #endif
