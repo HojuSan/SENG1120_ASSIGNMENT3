@@ -12,7 +12,6 @@ template <typename value_type>
 class BTNode
 {
     public:
-//    BTNode();
     BTNode(const value_type& intdata = value_type(), BTNode<value_type>* intLchild = NULL, BTNode<value_type>* intRchild = NULL, BTNode<value_type>* intparent = NULL);
     ~BTNode();
     void set_data(const value_type newData);

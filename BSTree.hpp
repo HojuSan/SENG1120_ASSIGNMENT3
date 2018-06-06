@@ -227,7 +227,6 @@
             privatePrint(node->get_left_child_data());
             cout << node->get_data() << " ";
             privatePrint(node->get_right_child_data());
-           // cout << node->get_data() << " ";
         }
     }
 

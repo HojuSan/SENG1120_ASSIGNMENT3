@@ -1,16 +1,5 @@
 #include "BTNode.h"
 
-/*
-template<typename value_type>
-BTNode<value_type>::BTNode()
-{
-    data ??
-    LChild = NULL;
-    RChild = NULL;
-    parent = NULL;
-}
-*/
-
 template<typename value_type>
 BTNode<value_type>::BTNode(const value_type& intdata, BTNode<value_type>* intLchild, BTNode<value_type>* intRchild, BTNode<value_type>* intParent)
 {
