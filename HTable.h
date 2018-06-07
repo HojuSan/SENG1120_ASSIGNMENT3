@@ -7,18 +7,18 @@
 
 using namespace std;
 
-
+template<typename value_type>
 class HTable
 {
     public:
     HTable();
     ~HTable();
-    void add(int value);
-    int hashfun(int value);
-    int returnSize(int index);
+    void add(const value_type value);
+    value_type& hashfun(const value_type& value);
+    int returnSize(const value_type& index);
     void printTable();
-    void findNumber(int value);
-    void remove(int value);
+    void findNumber(const value_type& value);
+    void remove(const value_type& value);
 
     private:
     static const int tableSize = 150;
@@ -31,6 +31,8 @@ class HTable
     item* hashTable[tableSize];
 };
 
-ostream& operator << (ostream& out, HTable& list);
+template<typename value_type>
+ostream& operator << (ostream& out, HTable<value_type>& list);
 
+#include "HTable.hpp"
 #endif

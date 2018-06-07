@@ -1,7 +1,7 @@
 #include "HTable.h"
 
-
-HTable::HTable()
+template<typename value_type>
+HTable<value_type>::HTable()
 {
     for(int i = 0; i < tableSize; i++)
     {
@@ -11,13 +11,14 @@ HTable::HTable()
     }
 }
 
-
-HTable::~HTable()
+template<typename value_type>
+HTable<value_type>::~HTable()
 {
     delete [] hashTable;
 }
 
-void HTable::add(int value)
+template<typename value_type>
+void HTable<value_type>::add(const value_type value)
 {
     int index = hashfun(value);
 
@@ -41,13 +42,14 @@ void HTable::add(int value)
 }
 
 
-int HTable::hashfun(int value)
+template<typename value_type>
+value_type& HTable<value_type>::hashfun(const value_type& value)
 {
     return value%tableSize;
 }
 
-
-int HTable::returnSize(int index)
+template<typename value_type>
+int HTable<value_type>::returnSize(const value_type& index)
 {
     int count = 0;
 
@@ -69,8 +71,8 @@ int HTable::returnSize(int index)
     return count;
 }
 
-
-void HTable::printTable()
+template<typename value_type>
+void HTable<value_type>::printTable()
 {
     for(int i = 0; i < tableSize; i++)
     {
@@ -81,8 +83,8 @@ void HTable::printTable()
     }
 }
 
-
-ostream& operator << (ostream& out, HTable& list)
+template<typename value_type>
+ostream& operator << (ostream& out, HTable<value_type>& list)
 {
     out << "(";
     list.printTable();
@@ -90,8 +92,8 @@ ostream& operator << (ostream& out, HTable& list)
     return out;
 }
 
-
-void HTable::findNumber(int value)
+template<typename value_type>
+void HTable<value_type>::findNumber(const value_type& value)
 {
     int index = hashfun(value);
     bool foundNumber = false;
@@ -117,8 +119,8 @@ void HTable::findNumber(int value)
     }
 }
 
-
-void HTable::remove(int value)
+template<typename value_type>
+void HTable<value_type>::remove(const value_type& value)
 {
     int index = hashfun(value);
 
