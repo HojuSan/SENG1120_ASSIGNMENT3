@@ -12,6 +12,7 @@ class HTable
 {
     public:
     HTable();
+    ~HTable();
     void add(int value);
     int hashfun(int value);
     int returnSize(int index);
@@ -25,8 +26,9 @@ class HTable
     {
         int number;
         item* next;
-    }
-    item* hashTable [tableSize];
+    };
+    //array of pointers
+    item* hashTable[tableSize];
 };
 
 ostream& operator << (ostream& out, HTable& list);
