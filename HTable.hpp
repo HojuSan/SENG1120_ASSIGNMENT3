@@ -1,7 +1,7 @@
 #include "HTable.h"
 
-template<typename value_type>
-HTable<value_type>::HTable()
+
+HTable::HTable()
 {
     for(int i = 0; i < tableSize; i++)
     {
@@ -11,8 +11,13 @@ HTable<value_type>::HTable()
     }
 }
 
-template<typename value_type>
-void HTable<value_type>::add(int value)
+
+HTable::~HTable()
+{
+    delete [] hashTable;
+}
+
+void HTable::add(int value)
 {
     int index = hashfun(value);
 
@@ -35,18 +40,18 @@ void HTable<value_type>::add(int value)
 
 }
 
-template<typename value_type>
-int HTable<value_type>::hashfun(int value)
+
+int HTable::hashfun(int value)
 {
     return value%tableSize;
 }
 
-template<typename value_type>
-int HTable<value_type>::returnSize(int index)
+
+int HTable::returnSize(int index)
 {
     int count = 0;
 
-    if(hashtable[index->number == 0])
+    if(hashTable[index]->number == 0)
     {
         return count;
     }
@@ -64,20 +69,20 @@ int HTable<value_type>::returnSize(int index)
     return count;
 }
 
-template<typename value_type>
-void HTable<value_type>::printTable()
+
+void HTable::printTable()
 {
     for(int i = 0; i < tableSize; i++)
     {
-        if(hashtable[i]->number != 0)
+        if(hashTable[i]->number != 0)
         {
-            cout << hashtable[i]->number << " ";
+            cout << hashTable[i]->number << " ";
         }
     }
 }
 
-template <typename value_type>
-ostream& operator << (ostream& out, HTable<value_type>& list)
+
+ostream& operator << (ostream& out, HTable& list)
 {
     out << "(";
     list.printTable();
@@ -85,8 +90,8 @@ ostream& operator << (ostream& out, HTable<value_type>& list)
     return out;
 }
 
-template<typename value_type>
-void HTable<value_type>::findNumber(int value)
+
+void HTable::findNumber(int value)
 {
     int index = hashfun(value);
     bool foundNumber = false;
@@ -95,10 +100,10 @@ void HTable<value_type>::findNumber(int value)
     item* tempPtr = hashTable[index];
     while(tempPtr != NULL)
     {
-        if(tempPtr->number == number)
+        if(tempPtr->number == value)
         {
             foundNumber = true;
-            tempNum = tempPtr->number
+            tempNum = tempPtr->number;
         }
         tempPtr = tempPtr->next;
     }
@@ -112,8 +117,8 @@ void HTable<value_type>::findNumber(int value)
     }
 }
 
-template<typename value_type>
-void HTable<value_type>::remove(int value)
+
+void HTable::remove(int value)
 {
     int index = hashfun(value);
 
