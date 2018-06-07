@@ -5,7 +5,7 @@ HTable<value_type>::HTable()
 {
     for(int i = 0; i < tableSize; i++)
     {
-        hashTable[i] = new item;
+        hashTable[i] = new item<value_type>;
         hashTable[i]->number = 0;
         hashTable[i]->next = NULL;
     }
@@ -16,7 +16,7 @@ HTable<value_type>::~HTable()
 {
     for(int i = 0; i < tableSize; i++)
     {
-//        delete hashTable[i];
+        delete hashTable[i];
 //        hashTable[i]->number;
 //        hashTable[i]->next = NULL;
     }
@@ -33,8 +33,8 @@ void HTable<value_type>::add(const value_type value)
     }
     else
     {
-        item* tempPtr = hashTable[index];
-        item* n = new item;
+        item<value_type>* tempPtr = hashTable[index];
+        item<value_type>* n = new item<value_type>;
         n->number = value;
         n->next = NULL;
         while(tempPtr->next != NULL)
@@ -48,7 +48,7 @@ void HTable<value_type>::add(const value_type value)
 
 
 template<typename value_type>
-value_type& HTable<value_type>::hashfun(const value_type& value)
+int HTable<value_type>::hashfun(const value_type& value)
 {
     return value%tableSize;
 }
@@ -65,7 +65,7 @@ int HTable<value_type>::returnSize(const value_type& index)
     else
     {
         count++;
-        item* tempPtr = hashTable[index];
+        item<value_type>* tempPtr = hashTable[index];
         while(tempPtr->next != NULL)
         {
             count++;
@@ -104,7 +104,7 @@ void HTable<value_type>::findNumber(const value_type& value)
     bool foundNumber = false;
     int tempNum;
 
-    item* tempPtr = hashTable[index];
+    item<value_type>* tempPtr = hashTable[index];
     while(tempPtr != NULL)
     {
         if(tempPtr->number == value)
@@ -129,9 +129,9 @@ void HTable<value_type>::remove(const value_type& value)
 {
     int index = hashfun(value);
 
-    item* delPtr;
-    item* p1;
-    item* p2;
+    item<value_type>* delPtr;
+    item<value_type>* p1;
+    item<value_type>* p2;
 
     //case1 item doesn't exist
     if(hashTable[index]->number == 0)

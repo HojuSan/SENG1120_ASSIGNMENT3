@@ -8,13 +8,20 @@
 using namespace std;
 
 template<typename value_type>
+struct item
+{
+    value_type number;
+    item* next;
+};
+
+template<typename value_type>
 class HTable
 {
     public:
     HTable();
     ~HTable();
     void add(const value_type value);
-    value_type& hashfun(const value_type& value);
+    int hashfun(const value_type& value);
     int returnSize(const value_type& index);
     void printTable();
     void findNumber(const value_type& value);
@@ -22,13 +29,8 @@ class HTable
 
     private:
     static const int tableSize = 150;
-    struct item
-    {
-        value_type& number;
-        item* next;
-    };
     //array of pointers
-    item* hashTable[tableSize];
+    item<value_type>* hashTable[tableSize];
 };
 
 template<typename value_type>
