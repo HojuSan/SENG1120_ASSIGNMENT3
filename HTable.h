@@ -24,7 +24,7 @@ class HTable
     static const int tableSize = 150;
     struct item
     {
-        int number;
+        value_type& number;
         item* next;
     };
     //array of pointers

@@ -14,7 +14,12 @@ HTable<value_type>::HTable()
 template<typename value_type>
 HTable<value_type>::~HTable()
 {
-    delete [] hashTable;
+    for(int i = 0; i < tableSize; i++)
+    {
+//        delete hashTable[i];
+//        hashTable[i]->number;
+//        hashTable[i]->next = NULL;
+    }
 }
 
 template<typename value_type>
