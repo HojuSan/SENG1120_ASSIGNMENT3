@@ -1,38 +1,48 @@
+/*
+Name:           Juyong Kim
+Subject:        SENG1120
+Task:           Assignment 3
+Hopes:          Passing this course
+Dreams:         Crushed
+Social Life:    Non Existent 
+*/
 #include "HTable.h"
 
+//constructor
 template<typename value_type>
 HTable<value_type>::HTable()
 {
-    for(int i = 0; i < tableSize; i++)
+    for(int i = 0; i < tableSize; i++)                                      //for loop that goes through the entire array
     {
-        hashTable[i] = new item<value_type>;
-        hashTable[i]->number = 0;
-        hashTable[i]->next = NULL;
+        hashTable[i] = new item<value_type>;                                //creates an item to save into each index of the array
+        hashTable[i]->number = 0;                                           //number is set to default
+        hashTable[i]->next = NULL;                                          //pointer is also set to null
     }
 }
 
+//deconstructor
 template<typename value_type>
 HTable<value_type>::~HTable()
 {
-    for(int i = 0; i < tableSize; i++)
+    for(int i = 0; i < tableSize; i++)                                      //for loop that goes through the entire array
     {
-        delete hashTable[i];
-        hashTable[i] = NULL;
+        delete hashTable[i];                                                //deletes the item in that index
+        hashTable[i] = NULL;                                                //sets the pointer from this index to null
     }
 }
 
 template<typename value_type>
 void HTable<value_type>::add(const value_type value)
 {
-    int index = hashfun(value);
+    int index = hashfun(value);                                             //sets a key from hashfun into an index
 
-    if(hashTable[index]->number == 0)
+    if(hashTable[index]->number == 0)                                       //if there is no value at that index of the array
     {
-        hashTable[index]->number = value;
+        hashTable[index]->number = value;                                   //set the value into that index of the array
     }
-    else
+    else                                                                    //else
     {
-        item<value_type>* tempPtr = hashTable[index];
+        item<value_type>* tempPtr = hashTable[index];                       //create a temporary pointer 
         item<value_type>* n = new item<value_type>;
         n->number = value;
         n->next = NULL;
