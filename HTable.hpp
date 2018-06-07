@@ -17,8 +17,7 @@ HTable<value_type>::~HTable()
     for(int i = 0; i < tableSize; i++)
     {
         delete hashTable[i];
-//        hashTable[i]->number;
-//        hashTable[i]->next = NULL;
+        hashTable[i] = NULL;
     }
 }
 

@@ -21,7 +21,7 @@ int main()
 
 	int vectorMarks[] = {123454, 23418, 787626, 56534, 879840, 5465443, 5650, 678760, 3456462, 34465, 97567, 345169, 1456769, 867570, 565471};
     cout << sizeof(vectorMarks)/sizeof(vectorMarks[0]) << endl;
-/*
+
 	t = clock(); // gets current time
 	
 	for (int i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++)
@@ -49,13 +49,6 @@ int main()
 	
     cout << "Final tree: " << treeValues << endl; // prints the contents of the tree.
 	cout << "Time elapsed: " << (clock() - t) << endl << endl; // prints elapsed time.
-*/
-
-//*************************************************************************************************************************
-	//hashtablespart
-
-//monomonomonomonomono
-
 
 	t = clock(); // gets current time
     for (int i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++) {tableValues.add(vectorMarks[i]);} // populates the hash table.

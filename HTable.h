@@ -10,6 +10,12 @@ using namespace std;
 template<typename value_type>
 struct item
 {
+    //This number is a little piece of shit that made me loose
+    //sleep for 3 days cause i couldn't figure out why
+    //the WDH#%YUSD@$^%Y wouldn't work, ONE BLOODY REFERENCE
+    //I should probably delete this but im to tired to. i need to vent, sorry
+    //value_type& number ~~ reminder of why i picked the wrong degree
+    //Never forget Daniel, Never forget
     value_type number;
     item* next;
 };
